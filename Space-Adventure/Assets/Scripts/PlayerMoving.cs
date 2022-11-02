@@ -29,17 +29,27 @@ public class PlayerMoving : MonoBehaviour
 
     int splashAmount;
 
+    Joystick joystick;
+    JoystickButton joystickButton;
+
+    bool jumping;
 
     void Start()
     {
+        joystickButton=FindObjectOfType<JoystickButton>();
         rgbdy2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        joystick=FindObjectOfType<Joystick>();
     }
 
     
     void Update()
     {
+#if UNITY_EDITOR
         KeyboardControl();
+#else
+                JoystickControl();
+#endif
     }
 
     void KeyboardControl()
@@ -72,6 +82,41 @@ public class PlayerMoving : MonoBehaviour
         }
         if (Input.GetKeyUp("space"))
         {
+            StopJump();
+        }
+    }
+
+    void JoystickControl()
+    {
+        moveInput = joystick.Horizontal;
+        scale = transform.localScale;
+        if (moveInput > 0)
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * speed, acceleration * Time.deltaTime);
+            animator.SetBool("Walk", true);
+            scale.x = 0.4f;
+        }
+        else if (moveInput < 0)
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * speed, acceleration * Time.deltaTime);
+            animator.SetBool("Walk", true);
+            scale.x = -0.4f;
+        }
+        else
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, 0, slowdown * Time.deltaTime);
+            animator.SetBool("Walk", false);
+        }
+        transform.localScale = scale;
+        transform.Translate(velocity * Time.deltaTime);
+        if (joystickButton.buttonPressed==true && jumping==false)
+        {
+            jumping = true;
+            StartJump();
+        }
+        if (joystickButton.buttonPressed==false && jumping==true)
+        {
+            jumping = false;
             StopJump();
         }
     }

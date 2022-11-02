@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Deadly
   - Foot
+  - Gold
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Gold
   - 
   - 
   - 
@@ -46,6 +47,12 @@ TagManager:
   - name: Platform
     uniqueID: 3914483573
     locked: 0
+  - name: Gold
+    uniqueID: 2310626097
+    locked: 0
   - name: Player
     uniqueID: 3560105481
+    locked: 0
+  - name: UI
+    uniqueID: 69514901
     locked: 0
