@@ -9,6 +9,7 @@ public class GoldDetector : MonoBehaviour
         if (collider.gameObject.tag=="Foot")
         {
             GetComponentInParent<Gold>().goldActiveClose();
+            FindObjectOfType<Point>().GoldEarn();
         }
     }
 }

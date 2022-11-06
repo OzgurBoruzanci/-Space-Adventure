@@ -12,9 +12,19 @@ public class MenuControl : MonoBehaviour
     [SerializeField]
     Button musicButton = default;
 
-    bool musicOpen=true;
 
-    
+    void Start()
+    {
+        if (Options.IsThereARecord()==false)
+        {
+            Options.EasyAssignValue(1);
+        }
+        if (Options.MusicIsThereARecord()==false)
+        {
+            Options.MusicAssignValue(1);
+        }
+        CheckMusicSettings();
+    }
 
     public void Play()
     {
@@ -33,15 +43,31 @@ public class MenuControl : MonoBehaviour
 
     public void Music()
     {
-        if (musicOpen)
+        if (Options.MusicReadValue()==1)
         {
-            musicOpen = false;
+            Options.MusicAssignValue(0);
+            MusicControl.instance.PlayMusic(false);
             musicButton.image.sprite = musicIkons[0];
         }
         else
         {
-            musicOpen = true;
+            Options.MusicAssignValue(1);
+            MusicControl.instance.PlayMusic(true);
             musicButton.image.sprite = musicIkons[1];
+        }
+    }
+
+    void CheckMusicSettings()
+    {
+        if (Options.MusicReadValue() ==1 )
+        {
+            musicButton.image.sprite = musicIkons[1];
+            MusicControl.instance.PlayMusic(true);
+        }
+        else
+        {
+            musicButton.image.sprite = musicIkons[0];
+            MusicControl.instance.PlayMusic(false);
         }
     }
 }

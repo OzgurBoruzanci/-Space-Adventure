@@ -125,8 +125,10 @@ public class PlayerMoving : MonoBehaviour
     {
         if (splashAmount<jumpLimit)
         {
+            FindObjectOfType<SoundControl>().JumpSound();
             rgbdy2d.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             animator.SetBool("Jump", true);
+            FindObjectOfType<SliderControl>().SliderValue(jumpLimit, splashAmount);
         }
         
     }
@@ -134,11 +136,25 @@ public class PlayerMoving : MonoBehaviour
     {
         animator.SetBool("Jump", false);
         splashAmount++;
+        FindObjectOfType<SliderControl>().SliderValue(jumpLimit, splashAmount);
     }
 
     public void JumpReset()
     {
         splashAmount = 0;
+        FindObjectOfType<SliderControl>().SliderValue(jumpLimit, splashAmount);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag=="Deadly")
+        {
+            FindObjectOfType<GameControl>().GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        Destroy(gameObject);
     }
 
 }

@@ -25,7 +25,19 @@ public class PlatformMove : MonoBehaviour
     void Start()
     {
         edCol2d = GetComponent<EdgeCollider2D>();
-        randomSpeed = Random.Range(0.5f, 1.0f);
+
+        if (Options.EasyReadValue() == 1)
+        {
+            randomSpeed = Random.Range(0.2f, 0.8f);
+        }
+        if (Options.NormalReadValue() == 1)
+        {
+            randomSpeed = Random.Range(0.5f, 1.0f);
+        }
+        if (Options.HardReadValue() == 1)
+        {
+            randomSpeed = Random.Range(0.8f, 1.5f);
+        }
 
         objectWidht = edCol2d.bounds.size.x / 2;
 

@@ -7,6 +7,8 @@ TagManager:
   - Deadly
   - Foot
   - Gold
+  - Platform
+  - Platform2
   layers:
   - Default
   - TransparentFX
@@ -43,6 +45,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 416940335
+    locked: 0
+  - name: Planets
+    uniqueID: 339826015
     locked: 0
   - name: Platform
     uniqueID: 3914483573

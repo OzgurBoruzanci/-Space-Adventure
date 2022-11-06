@@ -5,25 +5,19 @@ using UnityEngine.UI;
 
 public class HightScore : MonoBehaviour
 {
-    int hightScore = 0;
-    List<int> hightScores;
-
-    //[SerializeField]
-    //Text hightScoreText = default;
+    public Text easyPoint,easyGold,normalPoint,normalGold,hardPoint,hardGold;
     
     void Start()
     {
-        hightScore = PlayerPrefs.GetInt("Score");
-        hightScores.Add(hightScore);
-        for (int i = 0; i < hightScores.Count; i++)
-        {
-
-        }
-    }
-
-
-    void Update()
-    {
+        easyPoint.text = "Point : " + Options.EasyPointReadValue();
+        easyGold.text="X "+Options.EasyGoldReadValue();
         
+        normalPoint.text = "Point : " + Options.NormalPointReadValue();
+        normalGold.text = "X " + Options.NormalGoldReadValue();
+
+        hardPoint.text = "Point : " + Options.HardPointReadValue();
+        hardGold.text = "X " + Options.HardGoldReadValue();
     }
+
+
 }

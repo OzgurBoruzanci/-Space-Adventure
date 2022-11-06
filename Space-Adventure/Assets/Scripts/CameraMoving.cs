@@ -12,9 +12,24 @@ public class CameraMoving : MonoBehaviour
 
     void Start()
     {
-        speed = 0.5f;
-        acceleration = 0.05f;
-        maxSpeed = 2.0f;
+        if (Options.EasyReadValue()==1)
+        {
+            speed = 0.3f;
+            acceleration = 0.03f;
+            maxSpeed = 1.5f;
+        }
+        if (Options.NormalReadValue()==1)
+        {
+            speed = 0.5f;
+            acceleration = 0.05f;
+            maxSpeed = 2.0f;
+        }
+        if (Options.HardReadValue()==1)
+        {
+            speed = 0.8f;
+            acceleration = 0.08f;
+            maxSpeed = 2.5f;
+        }
     }
 
     
