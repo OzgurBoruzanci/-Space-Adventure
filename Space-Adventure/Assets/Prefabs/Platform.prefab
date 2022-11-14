@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -380483723
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -5862022666285825741, guid: 6bc98e416f68ef4429a285042ad6e554,
     type: 3}
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1984341199
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -7182453096281324025, guid: 7701467eac9051c40b8fe789f7baba8d,
     type: 3}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3822519234209823881}
   - component: {fileID: 4987429072771973339}
-  - component: {fileID: 2114812000418110661}
+  - component: {fileID: 2133434687349017983}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Gold
@@ -281,13 +281,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.008560538, y: -0.0017439127}
   m_Size: {x: 0.7396953, y: 0.7396953}
   m_Direction: 0
---- !u!114 &2114812000418110661
+--- !u!114 &2133434687349017983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

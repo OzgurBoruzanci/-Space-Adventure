@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8406984993355657412}
   - component: {fileID: 6545359660780762283}
   - component: {fileID: 7846257364080777736}
-  - component: {fileID: 1321262966468924296}
+  - component: {fileID: 2488586333061182922}
   m_Layer: 0
   m_Name: Platform2
   m_TagString: Platform2
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -380483723
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4064592478174706425, guid: 6bc98e416f68ef4429a285042ad6e554,
     type: 3}
@@ -106,7 +106,7 @@ EdgeCollider2D:
   - {x: -0.16793059, y: -0.15131855}
   - {x: -1.2524148, y: 0.025766611}
   - {x: -1.629353, y: 0.22866845}
---- !u!114 &1321262966468924296
+--- !u!114 &2488586333061182922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6325d2ca21cb194d8bb5ca16f64aff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform2: {fileID: 0}
+  platform2: {fileID: 9039526594111389600}
